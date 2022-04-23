@@ -40,7 +40,7 @@
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf002;" Size="Medium"/>
             </ShellContent.Icon>
         </ShellContent>
-        <ShellContent Title="Filem" ContentTemplate="{DataTemplate local:ItemsPage}" >
+        <ShellContent Title="Filem" ContentTemplate="{DataTemplate local:Sepetim}" >
                 <ShellContent.Icon>
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf290;" Size="Medium"/>
                 </ShellContent.Icon>

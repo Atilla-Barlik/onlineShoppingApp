@@ -1,4 +1,5 @@
 ﻿using MobileGUI.Models;
+using MobileGUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -722,7 +723,11 @@ namespace MobileGUI.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-           //sepete ekleme işlemleri
+            var btn = sender as Button;
+            var item = btn.BindingContext as SubProductItem;
+
+            Model.list.Add(item);
+            await DisplayAlert(item.Product, " ürünü sepete eklendi.", "ok");
         }
     }
 }

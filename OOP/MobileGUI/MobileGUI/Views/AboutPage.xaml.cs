@@ -21,7 +21,7 @@ namespace MobileGUI.Views
                 "https://www.file.com.tr/uploads/file/mainslider/1-03-2022-16-41-39-file-glutensiz-gida.png",
                 "https://www.file.com.tr/uploads/file/mainslider/16-02-2022-09-00-00-14-02-2022-15-11-30-harras-slider%20(1)%20(1).png"
             };
-
+            Model.list = new ObservableCollection<SubProductItem>();
             FırsatÜrünleriCarousel.ItemsSource = CarouselItems;
             AddProducts();
             lstProducts.ItemsSource = obProducts;

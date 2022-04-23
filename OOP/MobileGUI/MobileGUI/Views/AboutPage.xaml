@@ -4,6 +4,14 @@
              x:Class="MobileGUI.Views.AboutPage"
              xmlns:vm="clr-namespace:MobileGUI.ViewModels"
              Title="{Binding Title}">
+    <Shell.TitleView>
+        <Image Source="filemarket2.png"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+               WidthRequest="50"
+               HeightRequest="30"
+           />
+    </Shell.TitleView>
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
