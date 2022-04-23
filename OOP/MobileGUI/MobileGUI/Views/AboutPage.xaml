@@ -39,7 +39,8 @@
                                 <Grid Padding="10">
                                     <Frame CornerRadius="20">
                                         <StackLayout Orientation="Horizontal">
-                                            <Image WidthRequest="125" Source="{Binding ImageSource}"/>
+                                            <Image WidthRequest="100" Source="{Binding ImageSource}"
+                                                   HeightRequest="100"/>
                                             <StackLayout VerticalOptions="Center">
                                                 <Label VerticalOptions="Center" FontSize="Large" Text="{Binding Product}"/>
                                             </StackLayout>

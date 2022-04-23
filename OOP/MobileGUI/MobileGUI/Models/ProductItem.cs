@@ -14,7 +14,7 @@ namespace MobileGUI.Models
         { get { return product; } set { product = value; } }
 
         private string id;
-        public string Id
+        public string ID
         { get { return id; } set { id = value; } }
 
 
