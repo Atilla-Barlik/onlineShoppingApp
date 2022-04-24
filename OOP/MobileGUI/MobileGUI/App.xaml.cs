@@ -1,6 +1,9 @@
-﻿using MobileGUI.Services;
+﻿using MobileGUI.Models;
+using MobileGUI.Services;
+using MobileGUI.ViewModels;
 using MobileGUI.Views;
 using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +15,7 @@ namespace MobileGUI
         public App()
         {
             InitializeComponent();
-
+            searchListModel.list = new ObservableCollection<SubProductItem>();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }

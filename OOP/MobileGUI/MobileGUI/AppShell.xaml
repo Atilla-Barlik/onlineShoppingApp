@@ -35,7 +35,7 @@
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf54f;" Size="Medium"/>
             </ShellContent.Icon>
         </ShellContent>
-        <ShellContent Title="Ürün Ara" ContentTemplate="{DataTemplate local:ItemsPage}" >
+        <ShellContent Title="Ürün Ara" ContentTemplate="{DataTemplate local:SearchPage}" >
             <ShellContent.Icon>
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf002;" Size="Medium"/>
             </ShellContent.Icon>
