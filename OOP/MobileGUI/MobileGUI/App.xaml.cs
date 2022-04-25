@@ -16,6 +16,8 @@ namespace MobileGUI
         {
             InitializeComponent();
             searchListModel.list = new ObservableCollection<SubProductItem>();
+            ürünler ürünler = new ürünler();
+            ürünler.AddProducts();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }

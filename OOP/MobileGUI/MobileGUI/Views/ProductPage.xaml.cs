@@ -749,14 +749,11 @@ namespace MobileGUI.Views
                         {
                             if (item.Product == selectedProduct.Product)
                             {
-                                //searchListModel.list.Remove(item);
-
                                 item.Favorite = "1";
                                 break;
                             }
                         }
                     }
-
                     else
                     {
                         return;
@@ -766,9 +763,8 @@ namespace MobileGUI.Views
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error", "Catch girdi", "Ok");
+                DisplayAlert("Error", "Sistemde bir hata oluştu.", "Ok");
             }
-            //lstProducts.SelectedItem = null;
         }
     }
 }

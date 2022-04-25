@@ -18,12 +18,6 @@ namespace MobileGUI.Views
         public SearchPage()
         {
             InitializeComponent();
-
-            ürünler item = new ürünler();
-            item.AddProducts();
-
-            
-
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -40,9 +34,39 @@ namespace MobileGUI.Views
             await DisplayAlert(item.Product, " ürünü sepete eklendi.", "ok");
         }
 
-        private void lstProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void lstProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            try
+            {
 
+                BackgroundColor = Color.White;
+                var selectedProduct = (SubProductItem)e.CurrentSelection[0];
+                if (selectedProduct != null)
+                {
+                    bool answer = await DisplayAlert("Favorilere Ekle", selectedProduct.Product + " adlı ürün favorilere eklensin mi?", "Yes", "No");
+
+                    if (answer)
+                    {
+                        foreach (var item in searchListModel.list)
+                        {
+                            if (item.Product == selectedProduct.Product)
+                            {
+                                item.Favorite = "1";
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", "Sistemde bir hata oluştu.", "Ok");
+            }
         }
     }
 }

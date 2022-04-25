@@ -4,14 +4,10 @@
              x:Class="MobileGUI.Views.SearchPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <SearchBar Placeholder="Search items..."
                        CancelButtonColor="Green"
                        PlaceholderColor="Green"
                        TextColor="Black"
-           
                        HorizontalTextAlignment="Center"
                        FontSize="Medium"
                        FontAttributes="Italic" 
@@ -19,19 +15,18 @@
             <StackLayout>
                 <Grid>
                     <CollectionView  x:Name="lstProducts"
-                                  BackgroundColor="#E0E0E0"
-                                  ItemsSource="{Binding obProducts}"
-                                  SelectionMode="Single"
-                                  EmptyView="No item"
-                                  SelectionChanged="lstProducts_SelectionChanged">
+                                     BackgroundColor="#E0E0E0"
+                                     ItemsSource="{Binding obProducts}"
+                                     SelectionMode="Single"
+                                     EmptyView="Ürün Bulunamadı"
+                                     SelectionChanged="lstProducts_SelectionChanged">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="6"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                
-                                    <Grid Padding="2">
-                                        <Frame CornerRadius="20">
+                                <Grid Padding="2">
+                                    <Frame CornerRadius="20">
                                         <StackLayout Orientation="Horizontal">
                                             <StackLayout Orientation="Vertical" >
                                                 <Image WidthRequest="60" HeightRequest="60"  Source="{Binding ImageSource}"/>
@@ -41,30 +36,24 @@
                                             <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
                                                 <Button Text="+"
                                                         FontAttributes="Bold"
-                                                    BorderColor="LightGray"
+                                                        BorderColor="LightGray"
                                                         CornerRadius="5"
-                                                    FontSize="Small"
-                                                    BackgroundColor="White"
-                                                    TextColor="Black"
+                                                        FontSize="Small"
+                                                        BackgroundColor="White"
+                                                        TextColor="Black"
                                                         HeightRequest="35"
                                                         WidthRequest="35"
-                                                     CommandParameter="{Binding .}"
-                                                    VerticalOptions="Center"
-                                                    Clicked="Button_Clicked"
-                                                    />
-
+                                                        CommandParameter="{Binding .}"
+                                                        VerticalOptions="Center"
+                                                        Clicked="Button_Clicked"/>
                                             </StackLayout>
-
-                                            </StackLayout>
-                                        </Frame>
-                                    </Grid>
-                                
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-
                 </Grid>
-                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

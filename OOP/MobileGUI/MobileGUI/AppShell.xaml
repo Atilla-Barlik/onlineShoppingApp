@@ -23,7 +23,7 @@
                 <Setter Property="Shell.TabBarForegroundColor" Value="Green"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="Black"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="Green"/>
-                <Setter Property="Shell.FlyoutBackgroundColor" Value="White"/>
+                
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
@@ -46,7 +46,7 @@
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf290;" Size="Medium"/>
                 </ShellContent.Icon>
         </ShellContent>
-        <ShellContent Title="Hesabım" ContentTemplate="{DataTemplate local:HesabımPage}" >
+        <ShellContent Title="Hesabım" ContentTemplate="{DataTemplate local:FavoriteProductPage}" >
             <ShellContent.Icon>
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf039;" Size="Medium"/>
             </ShellContent.Icon>

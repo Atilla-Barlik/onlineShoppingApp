@@ -13,16 +13,18 @@
                                   SelectionMode="Single"
                                   EmptyView="No item"
                                   SelectionChanged="lstProducts_SelectionChanged_1">
+                                  
 
                         <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="6" />
+                            <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="6"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="2">
+                                <Grid Padding="2" BackgroundColor="#E0E0E0">
+                                    
                                     <Frame CornerRadius="20">
                                         <StackLayout Orientation="Horizontal">
-                                            <StackLayout Orientation="Vertical" >
+                                            <StackLayout Orientation="Vertical">
                                                 <Image WidthRequest="60" HeightRequest="60"  Source="{Binding ImageSource}"/>
                                                 <Label VerticalOptions="Center" FontSize="Small" Text="{Binding Product}"/>
                                                 <Label VerticalOptions="Center" FontSize="Small" TextColor="Green" Text="{Binding Price}"/>
