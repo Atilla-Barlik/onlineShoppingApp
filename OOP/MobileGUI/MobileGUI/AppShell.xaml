@@ -45,7 +45,7 @@
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf290;" Size="Medium"/>
                 </ShellContent.Icon>
         </ShellContent>
-        <ShellContent Title="Hesabım" ContentTemplate="{DataTemplate local:ItemsPage}" >
+        <ShellContent Title="Hesabım" ContentTemplate="{DataTemplate local:HesabımPage}" >
             <ShellContent.Icon>
                 <FontImageSource FontFamily="FASolid" Glyph="&#xf039;" Size="Medium"/>
             </ShellContent.Icon>
