@@ -34,5 +34,13 @@ namespace MobileGUI.Models
             get { return id; }
             set { id = value; }
         }
+
+        private string favorite;
+        public string Favorite
+        {
+            get { return favorite; }
+            set { favorite = value; }
+        }
+
     }
 }

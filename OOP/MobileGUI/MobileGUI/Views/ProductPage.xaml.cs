@@ -729,5 +729,46 @@ namespace MobileGUI.Views
             Model.list.Add(item);
             await DisplayAlert(item.Product, " ürünü sepete eklendi.", "ok");
         }
+
+        
+
+        private async void lstProducts_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+
+                BackgroundColor = Color.White;
+                var selectedProduct = (SubProductItem)e.CurrentSelection[0];
+                if (selectedProduct != null)
+                {
+                    bool answer = await DisplayAlert("Favorilere Ekle", selectedProduct.Product + " adlı ürün favorilere eklensin mi?", "Yes", "No");
+
+                    if (answer)
+                    {
+                        foreach (var item in searchListModel.list)
+                        {
+                            if (item.Product == selectedProduct.Product)
+                            {
+                                //searchListModel.list.Remove(item);
+
+                                item.Favorite = "1";
+                                break;
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        return;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", "Catch girdi", "Ok");
+            }
+            //lstProducts.SelectedItem = null;
+        }
     }
 }

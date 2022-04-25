@@ -7,41 +7,55 @@
             <Label Text="{Binding .}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        
-        <StackLayout>
-            <ListView x:Name="lstProducts" ItemsSource="{Binding sProducts}" SeparatorVisibility="Default" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                                <Grid Padding="10">
+
+            <StackLayout>
+                <Grid >
+                    <CollectionView 
+                                  x:Name="lstProducts"
+                                  BackgroundColor="Gray"
+                                  ItemsSource="{Binding obProducts}"
+                                  SelectionMode="Single"
+                                  EmptyView="No item"
+                                  SelectionChanged="lstProducts_SelectionChanged_1">
+
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="6" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="2">
                                     <Frame CornerRadius="20">
                                         <StackLayout Orientation="Horizontal">
-                                            <Image WidthRequest="100" HeightRequest="100" Source="{Binding ImageSource}"/>
-                                            <StackLayout VerticalOptions="Center">
-                                                <Label VerticalOptions="Center" FontSize="Large" Text="{Binding Product}"/>
-                                                <Label VerticalOptions="Center" FontSize="Large" Text="{Binding Price}"/>
+                                            <StackLayout Orientation="Vertical" >
+                                                <Image WidthRequest="60" HeightRequest="60"  Source="{Binding ImageSource}"/>
+                                                <Label VerticalOptions="Center" FontSize="Small" Text="{Binding Product}"/>
+                                                <Label VerticalOptions="Center" FontSize="Small" TextColor="Green" Text="{Binding Price}"/>
                                             </StackLayout>
-                                            <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
-                                                <Button Text="Satın Al"
-                                                    BorderColor="Green"
+                                            <StackLayout>
+
+                                                <Button Text="+"
+                                                       
+                                                    BorderColor="LightGray"
+                                                        CornerRadius="5"
                                                     FontSize="Small"
-                                                    BackgroundColor="Green"
-                                                    TextColor="White"
-                                                    CommandParameter="{Binding .}"
+                                                    BackgroundColor="White"
+                                                    TextColor="Black"
+                                                        HeightRequest="35"
+                                                        WidthRequest="35"
+                                                     CommandParameter="{Binding .}"
                                                     VerticalOptions="Center"
-                                                    
-                                                    Clicked="Button_Clicked"/>
+                                                    Clicked="Button_Clicked"
+                                                    />
+
                                             </StackLayout>
                                         </StackLayout>
                                     </Frame>
                                 </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
-
-        </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
