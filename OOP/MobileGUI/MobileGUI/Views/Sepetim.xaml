@@ -5,10 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-            <Label Text="{Binding .}"
-                   FontSize="Title"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            
             <StackLayout>
                 <ListView  
                     x:Name="lstProducts"
