@@ -143,21 +143,24 @@ namespace MobileGUI.Views
 
             }
         }
-        private async void LstProducts_ItemTapped(object sender, ItemTappedEventArgs e)
+        
+        private void lstProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
             {
-                try
-                {
-                    var SelectedProduct = (ProductItem)e.Item;
-                    await Navigation.PushAsync(new ProductPage(SelectedProduct.ID));
+
+                BackgroundColor = Color.White;
+                var selectedProduct = (ProductItem)e.CurrentSelection[0];
+                if (selectedProduct != null)
+                    Navigation.PushAsync(new ProductPage(selectedProduct.ID));
                 
 
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Error", ex.Message.ToString(), "ok");
-                }
-                lstProducts.SelectedItem = null;
             }
-
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", "Catch girdi", "Ok");
+            }
+            
+        }
     }
 }
