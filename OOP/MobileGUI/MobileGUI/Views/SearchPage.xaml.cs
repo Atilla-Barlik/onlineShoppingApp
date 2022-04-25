@@ -39,5 +39,10 @@ namespace MobileGUI.Views
             Model.list.Add(item);
             await DisplayAlert(item.Product, " ürünü sepete eklendi.", "ok");
         }
+
+        private void lstProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

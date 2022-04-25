@@ -4,15 +4,11 @@
              x:Class="MobileGUI.Views.ProductPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding .}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
             <StackLayout>
                 <Grid >
                     <CollectionView 
                                   x:Name="lstProducts"
-                                  BackgroundColor="Gray"
+                                  BackgroundColor="#E0E0E0"
                                   ItemsSource="{Binding obProducts}"
                                   SelectionMode="Single"
                                   EmptyView="No item"
@@ -32,20 +28,17 @@
                                                 <Label VerticalOptions="Center" FontSize="Small" TextColor="Green" Text="{Binding Price}"/>
                                             </StackLayout>
                                             <StackLayout>
-
-                                                <Button Text="+"
-                                                       
-                                                    BorderColor="LightGray"
+                                                <Button Text="+"                                                       
+                                                        BorderColor="LightGray"
                                                         CornerRadius="5"
-                                                    FontSize="Small"
-                                                    BackgroundColor="White"
-                                                    TextColor="Black"
+                                                        FontSize="Small"
+                                                        BackgroundColor="White"
+                                                        TextColor="Black"
                                                         HeightRequest="35"
                                                         WidthRequest="35"
-                                                     CommandParameter="{Binding .}"
-                                                    VerticalOptions="Center"
-                                                    Clicked="Button_Clicked"
-                                                    />
+                                                        CommandParameter="{Binding .}"
+                                                        VerticalOptions="Center"
+                                                        Clicked="Button_Clicked"/>
 
                                             </StackLayout>
                                         </StackLayout>
